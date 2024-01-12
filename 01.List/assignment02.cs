@@ -14,10 +14,12 @@ namespace _01.List
         class Item                                  //아이템기능
         {
             protected string name;
+            int price;
 
             public virtual void Buy()
             {
                 Console.WriteLine("을/를 삽니다");
+
             }
             public virtual void Sell()
             {
