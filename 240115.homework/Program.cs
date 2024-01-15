@@ -36,22 +36,47 @@ namespace _240115.homework
                     return true;
                 }
                 else { return false; }
-            
-        }*/
-        static void Main(string[] args)
-        {
-            bool IsOk(string text)
-            {
-                Queue<string> queue = new Queue<string>();
+        
+        Queue<string> queue = new Queue<string>();
                 queue.Enqueue(text);
                 // 0번째와 괄호를 이루는지 검사, 이룬다면 다음문자 검사, 번호 끝까지 이루지 못했다면 그즉시 failes
-                foreach
+                
 
 
+        }*/
+
+        public static bool IsOk(string text)
+        {
+            Stack<char> stack = new Stack<char>();
+
+            foreach (char c in text)
+            {
+                if (c = '(')
+                {
+                    stack.Push(c);
+                }
+                else if (c = '{')
+                {
+                    stack.Push(c);
+                }
+                else if (c = '[')
+                {
+                    stack.Push(c);
+                }
+                else if (c = ')')
+                {
+                    char bracked = stack.Pop();
+                    if (bracked = '{')
+                    {
+
+                    }
+                }
             }
-            
-            IsOk(Console.ReadLine());
-            
+        }
+
+        static void Main22(string[] args)
+        {
+
         }
     }
 }
