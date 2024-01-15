@@ -45,7 +45,7 @@ namespace _240115.homework
 
         }
 
-        static void Main()
+        static void Main22()
         {
             int[] result = ProcessJob(new int[] { 4, 4, 12, 10, 2, 10 });
             foreach (int day in result)
