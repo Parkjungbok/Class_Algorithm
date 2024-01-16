@@ -16,13 +16,13 @@
         // UI에서 활용
         // ex) 설정->사운드->변경확인 (뒤로가기상황)
 
-        static void Main(string[] args)
+        static void Main22(string[] args)
         {
             Stack<int> stack = new Stack<int>();
 
             for (int i = 0; i < 5; i++)
             {
-                stack.Push(i);              //입력순서 0 1 2 3 4
+               // stack.Push(i);              //입력순서 0 1 2 3 4
             }
 
             Console.WriteLine(stack.Peek());//최상단 : 4
