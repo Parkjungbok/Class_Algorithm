@@ -44,13 +44,13 @@
         */
 
 
-        private static void PrintGraphSearch(bool[] visited, int[] path)
+        private static void PrintGraphSearch(bool[] e, int[] j)
         {
             Console.WriteLine($"{"Vertex",8}{"Visit",8}{"Path",8}");
 
-            for (int i = 0; i < visited.Length; i++)
+            for (int i = 0; i < e.Length; i++)
             {
-                Console.WriteLine($"{i,8}{visited[i],8}{path[i],8}");
+                Console.WriteLine($"{i,8}{e[i],8}{j[i],8}");
             }
         }
 

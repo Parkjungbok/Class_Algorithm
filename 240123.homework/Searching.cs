@@ -22,15 +22,15 @@ namespace _240123.homework
             SearchNode(graph, start, e, j);
         }
 
-        public static void SearchNode(in bool[,] graph, int start, out bool[] e, out int[] j)
+        private static void SearchNode(in bool[,] graph, int start, bool[] e, int[] j)
         {
             e[start] = true;
-            for(int i = 0; i < graph.GetLength(0);i++)
+            for (int i = 0; i < graph.GetLength(0); i++)
             {
                 if (graph[start, i] && !e[i])
                 {
                     j[i] = start;
-                    SearchNode(graph, start, e, j);
+                    SearchNode(graph, i, e, j);
                 }
             }
         }
