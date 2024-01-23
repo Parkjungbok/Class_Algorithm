@@ -24,7 +24,7 @@ namespace _09.Sort
                 int minIndex = i;                   // 제일 작은 위치 표시
                 for (int j = i + 1; j <= end; j++)    // 더 작은게 있는지 확인
                 {
-                    if (list[j] < list[minIndex])
+                    if (list[j] < list[minIndex]) //더 작은 값을 발견했다면
                     {
                         minIndex = j;
                     }
@@ -37,7 +37,7 @@ namespace _09.Sort
         // 데이터를 하나씩 꺼내어 정렬된 자료 중 적합한 위치에 삽입하여 정렬
         // 시간복잡도 -  O(n²)
         // 공간복잡도 -  O(1)
-        // 중간에 꽂는 형태 큰숫자들은 그때마다 뒤로 밀어냄
+        // 데이터 공간이 2개, 중간에 꽂는 형태 큰숫자들은 그때마다 뒤로 밀어냄
 
         public static void InsertionSort(IList<int> list, int start, int end)
         {
@@ -45,9 +45,9 @@ namespace _09.Sort
             {
                 for (int j = i; j >= 1; j--)
                 {
-                    if (list[j - 1] < list[j])
+                    if (list[j - 1] < list[j]) // 전꺼랑 비교
                     {
-                        break;
+                        break;                  // 나보다 작다면 멈춤
                     }
                     Swap(list, j - 1, j);
                 }
@@ -62,11 +62,11 @@ namespace _09.Sort
 
         public static void BubbleSort(IList<int> list, int start, int end)
         {
-            for (int i = start; i <= end - 1; i++)
+            for (int i = start; i <= end - 1; i++)      // 마지막전까지
             {
-                for (int j = start; j < end - start; j++)
+                for (int j = start; j < end - start; j++)   
                 {
-                    if (list[j] > list[j + 1])
+                    if (list[j] > list[j + 1])  // 내가 더 크면 바꿈
                     {
                         Swap(list, j, j + 1);
                     }
@@ -114,23 +114,23 @@ namespace _09.Sort
                     rightIndex++;
                 }
             }
-            if (leftIndex > mid)
+            if (leftIndex > mid)                    // 왼쪽이 소진되면
             {
-                for (int i = rightIndex; i <= end; i++)
+                for (int i = rightIndex; i <= end; i++) //오른쪽을 복사
                 {
                     sortedList.Add(list[i]);
                 }
             }
             else
             {
-                for (int i = leftIndex; i <= mid; i++)
+                for (int i = leftIndex; i <= mid; i++)  // 오른쪽이 소진되면
                 {
-                    sortedList.Add(list[i]);
+                    sortedList.Add(list[i]);        // 왼쪽을 복사
                 }
             }
-            for (int i = 0; i < sortedList.Count; i++)
+            for (int i = 0; i < sortedList.Count; i++)      // 임시로 만든곳이라
             {
-                list[start + i] = sortedList[i];
+                list[start + i] = sortedList[i];            // 원래의 곳으로 복사
             }
         }
 
@@ -146,9 +146,9 @@ namespace _09.Sort
             if (start >= end)
                 return;
 
-            int pivot = start;
-            int left = pivot + 1;
-            int right = end;
+            int pivot = start;          // 맨앞의 피펏
+            int left = pivot + 1;       // 왼쪽은 피벗 앞부터
+            int right = end;            // 오른쪽은 끝
 
             while (left <= right)
             {
@@ -156,7 +156,7 @@ namespace _09.Sort
                 {
                     left++;
                 }
-                while (list[right] > list[pivot] && left <= right)
+                while (list[right] > list[pivot] && left <= right) // 라이트는 레프트보다 작거나 서료 교차될때까지
                 {
                     right--;
                 }
